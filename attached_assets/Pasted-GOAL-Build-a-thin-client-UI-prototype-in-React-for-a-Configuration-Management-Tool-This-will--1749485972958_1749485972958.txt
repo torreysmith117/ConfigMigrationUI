@@ -1,0 +1,57 @@
+GOAL:
+Build a thin-client UI prototype in **React** for a Configuration Management Tool. This will simulate user interaction with a backend data migration system that currently uses SSIS packages, but will eventually transition to modern services.
+
+CONTEXT:
+- Target users are configuration analysts and business analysts from both PLEXIS and external client organizations.
+- This tool will be client-facing and must appear modern, intuitive, and professional.
+- The prototype will run **entirely in-browser**, with mock logic and simulated responses.
+- No backend/API needed for this prototype — just use placeholders and `setTimeout` to simulate execution.
+
+TECH STACK:
+- React (functional components)
+- Lightweight CSS (or Tailwind if available, but optional)
+- No Redux or router (single-page prototype)
+- Use `useState`, `useEffect` and modular components
+
+FEATURES TO INCLUDE:
+
+1. **Execution Form** – the main interface
+   - Inputs:
+     - Source DB Server
+     - Source DB Name
+     - Target DB Name
+     - ETL DB Name
+   - Dropdowns:
+     - Agreement (e.g., "Benefit Contract Export", "Provider Import")
+     - Export Criteria (e.g., "All Fee Schedules", "By Contract", "By Date")
+   - Optional fields:
+     - Export Directory Path
+     - Log Directory Path
+     - Agreement Notes (multiline textarea)
+   - Button: `Execute Migration`
+   - On execution: simulate a short delay, then show a mock success message with number of records "migrated"
+
+2. **Configuration Set History** – under the form
+   - Mock table showing:
+     - File Name
+     - Agreement
+     - Export Criteria
+     - Export Date
+     - Description
+   - Include optional “Add/Edit Description” input on each row
+   - Support filtering by agreement (simulate with dropdown)
+
+3. **Design Considerations**
+   - Keep UI clean and aligned with modern SaaS styling
+   - Use clear labels and spacing for accessibility
+   - No actual DB logic — all lists and values can be hardcoded or simulated with arrays
+
+FUTURE EXTENSIBILITY (comment this in code):
+- Replace mock execution with API call to Node.js or .NET service
+- Replace dropdown values with data fetched from backend
+- Replace local table state with real execution history from server
+- Add authentication hooks when integrating into Orion or Azure-hosted environments
+
+PROJECT OBJECTIVE:
+Demonstrate a modern, maintainable, and scalable UI layer that could eventually replace thick-client tools. Gather internal feedback, validate workflows, and ensure readiness for client training and deployment.
+
